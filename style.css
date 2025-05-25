@@ -1,0 +1,28 @@
+
+#header-wrap {
+    background-color: rgb(229, 224, 215);
+}
+.nav-title {
+    font-size: 150%;
+    color: rgb(181, 181, 245);
+    text-align: center;
+    
+    
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.nav-link {
+    justify-content: center;
+
+}
+
+.nav-link li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }

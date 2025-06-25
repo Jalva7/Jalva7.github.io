@@ -1,28 +1,135 @@
-
 #header-wrap {
-    background-color: rgb(229, 224, 215);
+    padding: 1rem 0; /* Add some padding for better spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
 }
+
 .nav-title {
     font-size: 150%;
     color: rgb(181, 181, 245);
-    text-align: center;
-    
-    
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border: 2px solid rgb(181, 181, 245);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255);
+    margin: 0;
 }
+
 .nav-container {
+    
+}
+
+/* Style the actual list */
+.onepage-nav {
     display: flex;
-    justify-content: space-between; 
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    gap: 2rem; /* Space between nav items */
 }
 
+.nav-item {
+    /* Individual nav item styling if needed */
+}
+
+/* Fix the selector - target the actual links */
 .nav-link {
-    justify-content: center;
-
-}
-
-.nav-link li a {
-    color: white;
+    color: rgb(181, 181, 245);
+    background-color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
     transition: color 0.3s ease;
-  }
+    padding: 0.5rem 1rem; /* Add clickable area */
+    border-radius: 4px; /* Optional: rounded corners */
+    border: 1px solid rgb(181, 181, 245);
+}
+
+/* Add hover effect */
+.nav-link:hover {
+    color: rgb(181, 181, 245); /* Match title color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+}
+
+/* Style for active/current page */
+.nav-item.active .nav-link {
+    color: rgb(181, 181, 245);
+    font-weight: 600;
+}
+
+/* Basic body styling for better appearance */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(229, 224, 215);
+}
+
+/* Style the main content */
+main {
+    padding: 2rem;
+
+}
+
+
+/*About Me Section */
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.about-section h2 {
+    color: rgb(181, 181, 245);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-textbox {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid rgb(181, 181, 245);
+    text-align: left;
+    line-height: 1.6;
+    color: #333;
+
+}
+
+@media (max-width:768px) {
+    .nav-title {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+        width:fit-content;
+        margin: 0 auto 1rem auto;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    main {
+        padding: 1rem
+    }
+
+    #header-wrap {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-title {
+        text-align: center;
+    }
+
+    .nav-container {
+        display: flex;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}

@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jazzie's Home</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Jazzie's Home</title>
+        <!-- Bootstrap CSS from node_modules -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <!-- Your custom CSS (keep this AFTER Bootstrap) -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
 
 <body>
     <header id="header-wrap">
         <div class="nav-title">
             <h1>Jazzie's Home</h1>
         </div>
+
         <nav class="nav-container">
             <ul class="onepage-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="#header-wrap" aria-current="page">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#" onclick="openSkillsModal()">Skills</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#resume">Resume</a>
@@ -33,7 +39,59 @@
                 <p>Hey! I am Jazmin Alvarado and I am still learning how to code.</p>
             </div>
         </section>
+      
     </main>
 
+    <div id="skillsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSkillsModal()">&times;</span>
+            <h2>My Skills</h2>
+
+            <div class="skills-showcase">
+                <div class="skill-category">
+                    <h3>Technical Skils</h3>
+                    <div class="skill-list">
+                            <span class="skill-tap">HTML5</span>
+                            <span class="skill-tap">CSS3</span>
+                            <span class="skill-tap">JavaScript</span>
+                            <span class="skill-tap">Bootstrap</span>
+                            <span class="skill-tap">Git</span>
+                            <span class="skill-tap">VS Code</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Learning Skills</h3>
+                    <div class="skill-list">
+                            <span class="skill-tap">React</span>
+                            <span class="skill-tap">Node.js</span>
+                            <span class="skill-tap">Responsive Design</span>
+                            <span class="skill-tap">Web APIs</span>
+                    </div>
+                </div>
+           
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                            <span class="skill-tap">Attention to detail</span>
+                            <span class="skill-tap">Problem Solving</span>
+                            <span class="skill-tap">Teamwork</span>
+                            <span class="skill-tap">Adaptability</span>
+                    </div>
+                </div>
+
+                <div class="Goal">
+                    <h3>Goals</h3>
+                    <p>To become a proficient full-stack developer and contribute to exciting projects.</p>
+                </div>
+            </div>
+        </div>
+
+    
+    <script src="skills-modal.js"></script>
+    <script src="main.js"></script>
+    <script src="resume-modal.js"></script> <!--future resume modal script -->
+    <!-- Bootstrap JavaScript from node_modules -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

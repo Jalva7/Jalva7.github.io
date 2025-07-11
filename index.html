@@ -7,7 +7,7 @@
         <!-- Bootstrap CSS from node_modules -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <!-- Your custom CSS (keep this AFTER Bootstrap) -->
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
 
     </head>
 
@@ -20,63 +20,63 @@
         <nav class="nav-container">
             <ul class="onepage-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#header-wrap" aria-current="page">Home</a>
+                    <a class="nav-link" data-page="home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="openSkillsModal()">Skills</a>
+                    <a class="nav-link" data-page="skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#resume">Resume</a>
+                    <a class="nav-link" data-page="resume">Resume</a>
                 </li>
             </ul>     
         </nav>
     </header>
 
     <main>
+        <div id="home" class="page-content active">
         <section class="about-section">
             <h2>About Me</h2>
             <div class="about-textbox">
                 <p>Hey! I am Jazmin Alvarado and I am still learning how to code.</p>
+                <p>I'm passionate about creating beautiful and functional websites. I want to continuously expand my skills in web development and software engineering.</p>
+                <p>Welcome to my digital space where I showcase my journey, skills, and aspirations in the world of coding.</p>
             </div>
         </section>
-      
-    </main>
+        </div>
 
-    <div id="skillsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeSkillsModal()">&times;</span>
+    <div id="skills" class="page-content">
             <h2>My Skills</h2>
 
-            <div class="skills-showcase">
+            <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Technical Skils</h3>
                     <div class="skill-list">
-                            <span class="skill-tap">HTML5</span>
-                            <span class="skill-tap">CSS3</span>
-                            <span class="skill-tap">JavaScript</span>
-                            <span class="skill-tap">Bootstrap</span>
-                            <span class="skill-tap">Git</span>
-                            <span class="skill-tap">VS Code</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Learning Skills</h3>
-                    <div class="skill-list">
-                            <span class="skill-tap">React</span>
-                            <span class="skill-tap">Node.js</span>
-                            <span class="skill-tap">Responsive Design</span>
-                            <span class="skill-tap">Web APIs</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">VS Code</span>
                     </div>
                 </div>
            
                 <div class="skill-category">
                     <h3>Soft Skills</h3>
                     <div class="skill-list">
-                            <span class="skill-tap">Attention to detail</span>
-                            <span class="skill-tap">Problem Solving</span>
-                            <span class="skill-tap">Teamwork</span>
-                            <span class="skill-tap">Adaptability</span>
+                            <span class="skill-tag">Attention to detail</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Teamwork</span>
+                            <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Learning Skills</h3>
+                    <div class="skill-list">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">Web APIs</span>
                     </div>
                 </div>
 
@@ -87,11 +87,14 @@
             </div>
         </div>
 
-    
-    <script src="skills-modal.js"></script>
-    <script src="main.js"></script>
-    <script src="resume-modal.js"></script> <!--future resume modal script -->
-    <!-- Bootstrap JavaScript from node_modules -->
+        <div id="resume" class="page-content">
+            <h3>Education</h3>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>

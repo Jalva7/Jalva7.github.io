@@ -1,0 +1,387 @@
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jazzie's Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(229, 224, 215);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        #header-wrap {
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem;
+        }
+
+        .nav-title {
+            font-size: 150%;
+            color: rgb(181, 181, 245);
+            padding: 1rem 2rem;
+            border: 2px solid rgb(181, 181, 245);
+            border-radius: 8px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .onepage-nav {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: rgb(181, 181, 245);
+            background-color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid rgb(181, 181, 245);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgb(181, 181, 245);
+            color: white;
+        }
+
+        /* Page Content Styles */
+        .page-content {
+            display: none;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .page-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-content h2 {
+            color: rgb(181, 181, 245);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Home Page Styles */
+        .about-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-textbox {
+            background-color: rgb(255, 255, 255);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgb(181, 181, 245);
+            text-align: left;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills Page Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-category {
+            background-color: rgb(255, 255, 255);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgb(181, 181, 245);
+        }
+
+        .skill-category h3 {
+            color: rgb(181, 181, 245);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: rgba(181, 181, 245, 0.1);
+            color: rgb(181, 181, 245);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgb(181, 181, 245);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .skill-tag.learning {
+            background-color: rgb(181, 181, 245);
+            color: white;
+        }
+
+        .learning-goal {
+            background-color: rgb(255, 255, 255);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgb(181, 181, 245);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .learning-goal h3 {
+            color: rgb(181, 181, 245);
+            margin-bottom: 1rem;
+        }
+
+        /* Resume Page Styles */
+        .resume-section {
+            background-color: rgb(255, 255, 255);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgb(181, 181, 245);
+            margin-bottom: 2rem;
+        }
+
+        .resume-section h3 {
+            color: rgb(181, 181, 245);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .resume-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(181, 181, 245, 0.2);
+        }
+
+        .resume-item:last-child {
+            border-bottom: none;
+        }
+
+        .resume-item h4 {
+            color: rgb(181, 181, 245);
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-item .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #header-wrap {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-title {
+                text-align: center;
+            }
+
+            .onepage-nav {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .page-content {
+                padding: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-content h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header-wrap">
+        <div class="nav-title">
+            <h1>Jazzie's Home</h1>
+        </div>
+        <nav class="nav-container">
+            <ul class="onepage-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" data-page="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="resume">Resume</a>
+                </li>
+            </ul>     
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <section class="about-section">
+                <h2>About Me</h2>
+                <div class="about-textbox">
+                    <p>Hey! I am Jazmin Alvarado and I am still learning how to code.</p>
+                    <p>I'm passionate about creating beautiful, functional websites and constantly expanding my skills in web development. Every day brings new challenges and opportunities to grow as a developer.</p>
+                    <p>Welcome to my digital space where I showcase my journey, skills, and aspirations in the world of coding!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Skills Page -->
+        <div id="skills" class="page-content">
+            <h2>My Skills & Potential</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Currently Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag learning">React</span>
+                        <span class="skill-tag learning">Node.js</span>
+                        <span class="skill-tag learning">Responsive Design</span>
+                        <span class="skill-tag learning">Web APIs</span>
+                        <span class="skill-tag learning">Database Design</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Quick Learner</span>
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Time Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="learning-goal">
+                <h3>My Goal</h3>
+                <p>To become a skilled full-stack developer who creates beautiful, functional websites and applications that make a positive impact. I'm committed to continuous learning and staying current with the latest web technologies.</p>
+            </div>
+        </div>
+
+        <!-- Resume Page -->
+        <div id="resume" class="page-content">
+            <h2>Resume</h2>
+            
+            <div class="resume-section">
+                <h3>Education</h3>
+                <div class="resume-item">
+                    <h4>Self-Taught Web Developer</h4>
+                    <div class="date">2024 - Present</div>
+                    <p>Actively learning web development through online courses, tutorials, and hands-on projects. Focus on HTML, CSS, JavaScript, and modern web frameworks.</p>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Projects</h3>
+                <div class="resume-item">
+                    <h4>Personal Website</h4>
+                    <div class="date">2024</div>
+                    <p>Built a responsive personal website using HTML, CSS, and JavaScript. Features include single-page application navigation and modern design principles.</p>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Technical Skills</h3>
+                <div class="resume-item">
+                    <h4>Frontend Development</h4>
+                    <p>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</p>
+                </div>
+                <div class="resume-item">
+                    <h4>Tools & Technologies</h4>
+                    <p>Git, VS Code, npm, Command Line</p>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Learning Goals</h3>
+                <div class="resume-item">
+                    <h4>Next 6 Months</h4>
+                    <p>Master React.js, learn Node.js fundamentals, and build full-stack applications</p>
+                </div>
+                <div class="resume-item">
+                    <h4>2025 Goals</h4>
+                    <p>Land first developer role, contribute to open source projects, and expand into mobile development</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Single Page Application Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page-content');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Remove active class from all nav links
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all pages
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                    });
+                    
+                    // Show target page with animation
+                    setTimeout(() => {
+                        document.getElementById(targetPage).classList.add('active');
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+*/

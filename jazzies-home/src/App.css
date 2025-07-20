@@ -1,4 +1,5 @@
-#header-wrap {
+
+.header-wrap {
   padding: 1rem 0; /* Add some padding for better spacing */
   display: flex;
   justify-content: space-between;
@@ -17,9 +18,6 @@
   margin: 0;
 }
 
-.nav-container {
-  
-}
 
 /* Style the actual list */
 .onepage-nav {
@@ -28,10 +26,6 @@
   margin: 0;
   padding: 0;
   gap: 2rem; /* Space between nav items */
-}
-
-.nav-item {
-  /* Individual nav item styling if needed */
 }
 
 .nav-link {
@@ -56,6 +50,7 @@
 .nav-item.active .nav-link {
   color: rgb(181, 181, 245);
   font-weight: 600;
+  font-weight: bold;
 }
 
 /* Basic body styling for better appearance */
@@ -72,18 +67,40 @@ main {
 
 }
 
+.page-content {
+  display: none;
+}
+
+.page-content.nav-item.active {
+  display: block;
+}
+
+
+#home {
+  display: none;
+}
+
+.page-content.active,
+#home.active {
+  display: block; /* Show only the active page */
+}
 
 /*About Me Section */
 .about-section {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  text-align: center; 
+  display: grid;
+  grid-template-columns: 2 fr 1fr;
+  gap: 2rem;
+  align-items: start; 
 }
 
 .about-section h2 {
   color: rgb(181, 181, 245);
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  grid-column: 1 / -1; /* Make the heading span across both columns (still dont understand)*/
+  text-align: center;
 }
 
 .about-textbox {
@@ -96,114 +113,42 @@ main {
   color: #333;
 
 }
-
-@media (max-width:768px) {
-  .nav-title {
-      text-align: center;
-      margin-left: 0;
-      margin-right: 0;
-      display: block;
-      width:fit-content;
-      margin: 0 auto 1rem auto;
-  }
-
-  .nav-container {
-      justify-content: center;
-  }
-
-  main {
-      padding: 1rem
-  }
-
-  #header-wrap {
-      flex-direction: column;
-      gap: 1rem;
-  }
-
-  .nav-title {
-      text-align: center;
-  }
-
-  .nav-container {
-      display: flex;
-  }
-
-  main {
-      padding: 1rem;
-  }
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/* trying modal for the skills section */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  overflow: auto; /* Enable scroll if needed MAYBE DELETE */
-  animation: fadeIn 0.3s; /* Fade-in effect */
+.about-image img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid rgb(181, 181, 245);
+  object-fit: cover;
 }
 
-.modal-closing {
-  animation: fadeOut 0.4s; /* Fade-out effect */
-}
+/* Skills Showcase Section */
 
-.modal-content {
-  background-color: rgb(229, 224, 215);
-  margin: 5% auto; /* 5% from the top and centered */
-  padding: 2rem;
-  border:3px solid, rgb(181, 181, 245);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  width: 95%;
-  max-width: 800px;
-  max-height: 80vh;
-  overflow-y: auto; /* Enable vertical scroll if content is too tall */
-  position: relative;
-  animation: slideIn 0.3s; /* Slide-in effect */
-}
-
-/* Add closing animation for modal content */
-.modal.closing .modal-content {
-  animation: slideOut 0.4s;
-}
-
-.close {
-  color:rgb(181, 181, 245);
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.close:hover {
-  opacity: 0.7; /* Slightly dim the close button on hover */
-}
-
-.modal-content h2 {
-  color: rgb(181, 181, 245);
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.skills-showcase {
-  margin-bottom: 2rem;
+.skills-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .skill-category {
-  margin-bottom: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgb(181, 181, 245);
 }
 
 .skill-category h3 {
   color: rgb(181, 181, 245);
   margin-bottom: 1rem;
   font-size: 1.3rem;
+  text-align: center;
 }
 
 .skill-list {
@@ -219,34 +164,147 @@ main {
   border-radius: 20px;
   border: 2px solid rgb(181, 181, 245);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 900;
 }
 
-.skill-tag.learning {
-  background-color: rgb(181, 181, 245);
-  color: white;
-}
-
-.skill-tag.soft {
-  background-color: rgba(181, 181, 245, 0.1);
-}
-.Goal h3{
-  color: rgb(181, 181, 245);
-  font-size: 2rem;
-}
-
-.learning-goal {
+.Goal {
   background-color: rgb(255, 255, 255);
   padding: 1.5rem;
   border-radius: 12px;
   border: 2px solid rgb(181, 181, 245);
   text-align: center;
+  grid-column: 1 / -1;;
 }
 
-.learning-goal h3 {
+.Goal h3 {
   color: rgb(181, 181, 245);
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
+
+#resume h2, #skills h2 {
+  color: rgb(181, 181, 245);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.resume-section {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.resume-section h3 {
+  color: rgb(181, 181, 245);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgb(181, 181, 245);
+  padding-bottom: 0.5rem;
+}
+
+.resume-item {
+  background-color: rgb(255, 255, 255);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgb(181, 181, 245);
+  margin-bottom: 1.5rem;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resume-item h4 {
+  color: rgb(181, 181, 245);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* FIX THIS VARIABLE IF WRONG */
+.resume-time, .period {
+  background-color: rgb(181, 181, 245);
+  color: rgb(255, 255, 255);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.resume-institution, .company {
+  color: #666;
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.resume-description {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* project stuff */
+
+.status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status.completed {
+  background-color: rgba(149, 226, 135, 0.883);
+  color: white;
+}
+
+.status.in-progress {
+  background-color: rgba(247, 247, 151, 0.941);
+  color: white;
+}
+
+.technologies {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.technologies strong {
+  color: rgb(181, 181, 245);
+}
+
+.description {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Experience responsibilities list */
+.responsibilities {
+  margin: 1rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.responsibilities li {
+  margin-bottom: 0.5rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: rgb(181, 181, 245);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+
 
 @keyframes fadeIn {
   from {opacity: 0;}
@@ -268,3 +326,53 @@ main {
   to {transform: translateY(-50px); opacity: 0;}
 }
 
+@media (max-width:768px) {
+  .nav-title {
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+      display: block;
+      width:fit-content;
+      margin: 0 auto 1rem auto;
+  }
+  .nav-container {
+      justify-content: center;
+  }
+
+  main {
+      padding: 1rem
+  }
+
+  .header-wrap {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  .nav-title {
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+      display: block;
+      width: fit-content;
+      margin: 0 auto 1rem auto;
+  }
+
+  .nav-container {
+      display: flex;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .resume-item-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}

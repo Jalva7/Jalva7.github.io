@@ -48,7 +48,7 @@ export default function App() {
         name: 'Personal Portfolio Website',
         technologies: 'React, CSS3, JavaScript',
         description: 'A responsive portfolio showcasing my skills and projects with modern design principles.',
-        status: 'Completed'
+        status: 'In Progress'
       },
       {
         name: 'Runners Wish Website',

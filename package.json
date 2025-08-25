@@ -1,0 +1,21 @@
+{
+  "name": "jalva7.github.io",
+  "version": "1.0.0",
+  "description": "-> Jazzies-Home Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm start --prefix jazzies-home"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jalva7/Jalva7.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jalva7/Jalva7.github.io/issues"
+  },
+  "homepage": "https://github.com/Jalva7/Jalva7.github.io#readme"
+}

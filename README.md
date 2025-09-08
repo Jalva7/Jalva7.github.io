@@ -1,7 +1,7 @@
 
 MY PERSONAL WEBSITE - JazminA
 
-I made this to put my coding skills to use and to learn more all while building a website about me! 
+This website showcases my skills, experience, and dreams in web development and UX design. It's my digital space where I share my story and aspirations.
 
 
 ## Available Scripts

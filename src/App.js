@@ -65,6 +65,16 @@ export default function App() {
     ],
     experience: [
       {
+        title: 'Receiver',
+        company: 'Makita',
+        time: 'May 2025 - Aug 2025',
+        responsibilities: [
+          'Identified and reported damaged or defective items to appropriate departments for resolution',
+          'Organized and stocked tools, equipment, and materials in designated storage locations for optimal accessibility',
+          'Received, inspected, and verified incoming shipments to ensure ideal destination.Identified and reported damaged or defective items to appropriate departments for resolution. Organized and stocked tools, equipment, and materials in designated storage locations for optimal accessibility. Received, inspected, and verified incoming shipments to ensure ideal destination'
+        ]
+      }, 
+      {
         title: 'Fulfillment Associate',
         company: 'Amazon',
         time: 'May 2024 - Aug 2024',
@@ -178,7 +188,7 @@ export default function App() {
               </div>
               
               <div className="about-image">
-                <img src="https://avatars.githubusercontent.com/u/127626646?v=4" alt="Jazmin Alvarado" />
+                <img src="/JazminA/images/me24.JPEG" alt="Jazmin Alvarado" />
               </div>
             </div>
             

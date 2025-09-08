@@ -171,7 +171,8 @@ main {
   height: 300px;
   border-radius: 8px;
   object-fit: cover;
-  border: 1px solid var(--border-color);
+  border: 3px solid rgb(212, 177, 212);
+  box-shadow: 0 6px 10px rgba(5, 5, 5, 0.454);
 }
 
 .scroll-hint {
